@@ -24,6 +24,12 @@ public class Line {
 		return startPoint.distance(endPoint);
 	}
 	
+	public boolean contains(int x, int y) {
+		Point click = new Point(x,y);
+		return (length() - (startPoint.distance(click) + endPoint.distance(click))) <= 2;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return String.format("(%s, %s) -> (%s,%s)", 

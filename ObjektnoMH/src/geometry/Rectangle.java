@@ -30,6 +30,17 @@ public class Rectangle {
 		return 2*height + 2*width;
 	}
 	
+	public boolean contains(int x, int y) {
+		return
+		(x >= upperLeft.getX() && x <= upperLeft.getX() + width)
+		&&
+		(y >= upperLeft.getY() && y <= upperLeft.getY() + height);
+	}
+	
+	public boolean contains(Point click) {
+		return contains(click.getX(), click.getY());
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("Upper left: (%s, %s), width: %s, height: %s", upperLeft.getX(), upperLeft.getY(), width , height);
